@@ -1,0 +1,30 @@
+{
+  "name": "microservice",
+  "version": "1.0.0",
+  "description": "Template de microsserviço REST",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "lint": "eslint --fix src/**/*.js",
+    "dev": "node -r dotenv/config src/server.js",
+    "test": "mocha -r dotenv/config test/**/*.js --exit"
+  },
+  "keywords": [
+    "microservice",
+    "prometheus",
+    "restify"
+  ],
+  "author": "Eugenio Cunha <eugenio.cunha@ymail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "prom-client": "^13.0.0",
+    "restify": "^8.5.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.17.0",
+    "mocha": "^8.2.1",
+    "node-fetch": "^2.6.1"
+  }
+}
