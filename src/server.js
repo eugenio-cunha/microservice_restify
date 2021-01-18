@@ -5,7 +5,7 @@ const middleware = require('./middleware');
 const { createServer } = require('restify');
 
 /**
- * @description Intâcia o HTTP server do microsserviço
+ * @description Inicializa a instância HTTP server do microsserviço
  * @param {Function} router Rotas do microsserviço
  * @param {Function} middleware Middlewares do microsserviço
  *

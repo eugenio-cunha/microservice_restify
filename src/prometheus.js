@@ -10,7 +10,7 @@ class Prometheus {
   }
 
   /**
-   * @description Configura o registro de metricas
+   * @description Configura o registro das metricas
    * @param {String} prefix Prefixo das mestricas (default nome do microsserviço)
    * @param {Number} timeout Intervalo de registro das metricas (default 30000MS)
    */
@@ -21,7 +21,7 @@ class Prometheus {
   }
 
   /**
-   * @description Obtém uma instância Singleton do Prometheus
+   * @description Inicializa uma instância Singleton do Prometheus
    * @param {String} name Prefix das metricas
    * @param {Number} timeout Timeout da metricas
    *
@@ -36,14 +36,15 @@ class Prometheus {
   }
 
   /**
-   * @description Retorna as metricas do microsserviço
+   * @description Retorna as métricas do microsserviço
    *
-   * @returns {String} Metricas do microsserviço
+   * @returns {Object} Metricas do microsserviço
    */
-  async metrics () {
-    const type = this.register.contentType;
-    const values = await this.register.metrics();
-    return { type, values };
+  async metrics() {
+    return {
+      type: this.register.contentType,
+      values: await this.register.metrics()
+    };
   }
 
 }
